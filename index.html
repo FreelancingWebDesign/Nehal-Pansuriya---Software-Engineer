@@ -9,17 +9,19 @@
         <meta name="description" content="Experienced Full Stack Developer skilled in React, Node.js, and modern web technologies. Passionate about scalable, high-performance applications.">
         <meta name="keywords" content="Full Stack Developer, React, Node.js, Web Developer, JavaScript, MongoDB, UI/UX, Nehal Panasuriya">
         <meta name="author" content="Nehal Panasuriya">
-        <script src="App.js"></script>
         
         <!-- Open Graph (OG) Meta Tags for Social Media -->
         <meta property="og:title" content="Nehal Panasuriya - Full Stack Developer">
         <meta property="og:description" content="4+ years experienced React Full Stack Developer creating impactful web applications.">
         <meta property="og:type" content="website">
+        <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=Nehal+Panasuriya+-+Full+Stack+Developer">
+        <meta property="og:url" content="https://nehalpanasuriya.com">
         
         <!-- Twitter Card for better social media visibility -->
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:title" content="Nehal Panasuriya - Full Stack Developer">
         <meta name="twitter:description" content="Experienced React Full Stack Developer. Passionate about scalable applications.">
+        <meta name="twitter:image" content="https://via.placeholder.com/1200x630.png?text=Nehal+Panasuriya+-+Full+Stack+Developer">
     
         <!-- Tailwind CSS -->
         <script src="https://cdn.tailwindcss.com"></script>
@@ -27,6 +29,38 @@
         <!-- FontAwesome Icons -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+        <style>
+            /* Smooth scrolling */
+            html {
+                scroll-behavior: smooth;
+            }
+            
+            /* Custom hover effects */
+            .project-card:hover {
+                transform: translateY(-5px);
+                transition: transform 0.3s ease;
+            }
+            
+            .skill-card:hover {
+                transform: scale(1.05);
+                transition: transform 0.3s ease;
+            }
+            
+            /* Mobile menu */
+            .mobile-menu {
+                display: none;
+            }
+            
+            @media (max-width: 768px) {
+                .desktop-menu {
+                    display: none;
+                }
+                
+                .mobile-menu {
+                    display: block;
+                }
+            }
+        </style>
     </head>
     
 <body class="bg-gradient-to-r from-gray-100 to-blue-50 font-sans text-gray-800">
@@ -34,7 +68,9 @@
     <nav class="sticky top-0 bg-white shadow-md z-50">
         <div class="container mx-auto px-6 py-4 flex items-center justify-between">
             <h1 class="text-2xl font-bold text-blue-700 tracking-wide">Nehal Panasuriya</h1>
-            <div class="space-x-6 text-sm font-medium">
+            
+            <!-- Desktop Menu -->
+            <div class="desktop-menu space-x-6 text-sm font-medium">
                 <a href="#experience" class="relative group">
                     <span class="hover:text-blue-600 transition-colors duration-200">Experience</span>
                     <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
@@ -49,18 +85,31 @@
                     <span class="hover:text-blue-600 transition-colors duration-200">Projects</span>
                     <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
                 </a>
-                
             </div>
+            
+            <!-- Mobile Menu Button -->
+            <div class="mobile-menu">
+                <button id="menu-toggle" class="text-blue-700 focus:outline-none">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu Items -->
+        <div id="mobile-menu-items" class="hidden bg-white py-2 px-6 shadow-lg">
+            <a href="#experience" class="block py-2 hover:text-blue-600">Experience</a>
+            <a href="#skills" class="block py-2 hover:text-blue-600">Skills</a>
+            <a href="#projects" class="block py-2 hover:text-blue-600">Projects</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="container mx-auto px-6 py-20">
         <div class="text-center">
-            <h2 class="text-5xl font-extrabold text-blue-800 mb-4 leading-tight">Software Engineer</h2>
+            <h2 class="text-4xl md:text-5xl font-extrabold text-blue-800 mb-4 leading-tight">Software Engineer</h2>
             
             <!-- Contact Links -->
-            <div class="flex justify-center flex-wrap gap-6 mb-6 text-lg text-gray-700">
+            <div class="flex justify-center flex-wrap gap-4 md:gap-6 mb-6 text-base md:text-lg text-gray-700">
                 <a href="tel:+917043649941" class="flex items-center space-x-2 hover:text-blue-700 transition">
                     <i class="fas fa-phone-alt"></i>
                     <span>+91 7043649941</span>
@@ -72,7 +121,7 @@
             </div>
 
             <!-- Summary -->
-            <p class="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
+            <p class="text-gray-600 max-w-2xl mx-auto text-base md:text-lg leading-relaxed">
                 Software Engineer with <strong>4+ years</strong> of experience in designing and building robust full-stack applications. Proficient in modern web technologies with a passion for innovation, problem-solving, and lifelong learning.
             </p>
         </div>
@@ -83,8 +132,36 @@
     <section id="experience" class="bg-white py-16">
         <div class="container mx-auto px-6">
             <h3 class="text-3xl font-bold mb-8">Experience</h3>
-            <div id="experience-content" class="space-y-8">
-                <!-- JavaScript will inject experience items here -->
+            <div class="space-y-8">
+                <!-- Experience Item 1 -->
+                <div class="experience-item p-6 bg-gray-50 rounded-lg border-l-4 border-blue-600">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
+                        <h4 class="text-xl font-semibold">Full Stack Developer</h4>
+                        <span class="text-blue-600 font-medium">Jan 2021 - Present</span>
+                    </div>
+                    <p class="text-gray-700 mb-2">Company Name</p>
+                    <ul class="list-disc list-inside text-gray-600 space-y-1">
+                        <li>Developed and maintained full-stack web applications using React, Node.js, and MongoDB</li>
+                        <li>Implemented responsive UI components with modern CSS frameworks</li>
+                        <li>Collaborated with cross-functional teams to deliver high-quality software solutions</li>
+                        <li>Optimized application performance and improved load times by 30%</li>
+                    </ul>
+                </div>
+                
+                <!-- Experience Item 2 -->
+                <div class="experience-item p-6 bg-gray-50 rounded-lg border-l-4 border-green-600">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
+                        <h4 class="text-xl font-semibold">Frontend Developer</h4>
+                        <span class="text-green-600 font-medium">Jun 2019 - Dec 2020</span>
+                    </div>
+                    <p class="text-gray-700 mb-2">Previous Company</p>
+                    <ul class="list-disc list-inside text-gray-600 space-y-1">
+                        <li>Built interactive user interfaces using React and modern JavaScript</li>
+                        <li>Integrated RESTful APIs and implemented state management solutions</li>
+                        <li>Worked closely with UX/UI designers to implement pixel-perfect designs</li>
+                        <li>Participated in code reviews and contributed to team best practices</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
@@ -95,57 +172,57 @@
             <h3 class="text-3xl font-bold mb-8">Technical Skills</h3>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <!-- Frontend -->
-                <div class="skill-card p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                <div class="skill-card p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-all">
                     <i class="fab fa-react text-3xl text-blue-600"></i>
                     <h5 class="mt-2 font-semibold">React.js</h5>
                 </div>
-                <div class="skill-card p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                <div class="skill-card p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-all">
                     <i class="fab fa-js-square text-3xl text-yellow-500"></i>
                     <h5 class="mt-2 font-semibold">JavaScript</h5>
                 </div>
-                <div class="skill-card p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                <div class="skill-card p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-all">
                     <i class="fab fa-html5 text-3xl text-orange-500"></i>
                     <h5 class="mt-2 font-semibold">HTML5</h5>
                 </div>
-                <div class="skill-card p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                <div class="skill-card p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-all">
                     <i class="fab fa-css3-alt text-3xl text-blue-500"></i>
                     <h5 class="mt-2 font-semibold">CSS3 / Bootstrap</h5>
                 </div>
 
                 <!-- Backend & DB -->
-                <div class="skill-card p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                <div class="skill-card p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-all">
                     <i class="fab fa-node text-3xl text-green-600"></i>
                     <h5 class="mt-2 font-semibold">Node.js</h5>
                 </div>
-                <div class="skill-card p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                <div class="skill-card p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-all">
                     <i class="fas fa-database text-3xl text-purple-600"></i>
                     <h5 class="mt-2 font-semibold">MongoDB</h5>
                 </div>
-                <div class="skill-card p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                <div class="skill-card p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-all">
                     <i class="fas fa-server text-3xl text-indigo-600"></i>
                     <h5 class="mt-2 font-semibold">Express.js</h5>
                 </div>
-                <div class="skill-card p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                <div class="skill-card p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-all">
                     <i class="fas fa-database text-3xl text-pink-600"></i>
                     <h5 class="mt-2 font-semibold">PostgreSQL / Sequelize</h5>
                 </div>
 
                 <!-- Tools & DevOps -->
-                <div class="skill-card p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                <div class="skill-card p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-all">
                     <i class="fab fa-git-alt text-3xl text-orange-600"></i>
                     <h5 class="mt-2 font-semibold">Git / GitHub / GitLab</h5>
                 </div>
-                <div class="skill-card p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                <div class="skill-card p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-all">
                     <i class="fas fa-cloud text-3xl text-blue-400"></i>
                     <h5 class="mt-2 font-semibold">AWS IoT</h5>
                 </div>
-                <div class="skill-card p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                <div class="skill-card p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-all">
                     <i class="fas fa-tools text-3xl text-gray-600"></i>
                     <h5 class="mt-2 font-semibold">Linux / Nginx</h5>
                 </div>
 
                 <!-- Testing / APIs -->
-                <div class="skill-card p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                <div class="skill-card p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-all">
                     <i class="fas fa-code text-3xl text-green-500"></i>
                     <h5 class="mt-2 font-semibold">Postman / Swagger</h5>
                 </div>
@@ -160,7 +237,7 @@
         <h3 class="text-3xl font-bold mb-8">Projects</h3>
         <div class="grid md:grid-cols-2 gap-6">
             <!-- Connected Safety -->
-            <div class="project-card p-6 bg-gray-50 rounded-lg hover:shadow-lg transition-shadow">
+            <div class="project-card p-6 bg-gray-50 rounded-lg hover:shadow-lg transition-all">
                 <h4 class="text-xl font-semibold">Connected Safety IoT Dashboard</h4>
                 <p class="text-gray-600 mt-2">Real-time tracking system for firefighters using React and Node.js.</p>
                 <div class="mt-4 flex flex-wrap gap-2">
@@ -171,7 +248,7 @@
             </div>
 
             <!-- PowerBlox -->
-            <div class="project-card p-6 bg-gray-50 rounded-lg hover:shadow-lg transition-shadow">
+            <div class="project-card p-6 bg-gray-50 rounded-lg hover:shadow-lg transition-all">
                 <h4 class="text-xl font-semibold">PowerBlox Dashboard</h4>
                 <p class="text-gray-600 mt-2">Multi-tenant electricity meter management system integrated with AWS IoT.</p>
                 <div class="mt-4 flex flex-wrap gap-2">
@@ -182,7 +259,7 @@
             </div>
 
             <!-- Hafla Event Management -->
-            <div class="project-card p-6 bg-gray-50 rounded-lg hover:shadow-lg transition-shadow">
+            <div class="project-card p-6 bg-gray-50 rounded-lg hover:shadow-lg transition-all">
                 <h4 class="text-xl font-semibold">Hafla Event Management</h4>
                 <p class="text-gray-600 mt-2">A celebration and event booking platform developed with NextJS and TailwindCSS.</p>
                 <div class="mt-4 flex flex-wrap gap-2">
@@ -193,7 +270,7 @@
             </div>
 
             <!-- Notes Sharing Website -->
-            <div class="project-card p-6 bg-gray-50 rounded-lg hover:shadow-lg transition-shadow">
+            <div class="project-card p-6 bg-gray-50 rounded-lg hover:shadow-lg transition-all">
                 <h4 class="text-xl font-semibold">Online Notes Sharing Website</h4>
                 <p class="text-gray-600 mt-2">Django-based platform for students to upload and download study materials.</p>
                 <div class="mt-4 flex flex-wrap gap-2">
@@ -204,7 +281,7 @@
             </div>
 
             <!-- E-Police Station Website -->
-            <div class="project-card p-6 bg-gray-50 rounded-lg hover:shadow-lg transition-shadow">
+            <div class="project-card p-6 bg-gray-50 rounded-lg hover:shadow-lg transition-all">
                 <h4 class="text-xl font-semibold">E-Police Station Website</h4>
                 <p class="text-gray-600 mt-2">Crime reporting and moderation system built with Django for law enforcement.</p>
                 <div class="mt-4 flex flex-wrap gap-2">
@@ -231,23 +308,59 @@
             <!-- Social Links -->
             <div class="flex justify-center space-x-6">
                 <a href="https://github.com/nehalpanasuriya" target="_blank" rel="noopener" class="hover:text-white transition-colors duration-200">
-                    <i class="fab fa-github text-2xl"></i>
+                    <i class="fab fa-github text-2xl" aria-hidden="true"></i>
+                    <span class="sr-only">GitHub</span>
                 </a>
                 <a href="https://linkedin.com/in/nehalpanasuriya" target="_blank" rel="noopener" class="hover:text-white transition-colors duration-200">
-                    <i class="fab fa-linkedin text-2xl"></i>
+                    <i class="fab fa-linkedin text-2xl" aria-hidden="true"></i>
+                    <span class="sr-only">LinkedIn</span>
                 </a>
                 <a href="mailto:nehal.pan17@gmail.com" class="hover:text-white transition-colors duration-200">
-                    <i class="fas fa-envelope text-2xl"></i>
+                    <i class="fas fa-envelope text-2xl" aria-hidden="true"></i>
+                    <span class="sr-only">Email</span>
                 </a>
             </div>
     
             <!-- Back to top -->
             <div>
-                <a href="#top" class="text-sm inline-block bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-full transition">
+                <a href="#" class="text-sm inline-block bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-full transition">
                     ↑ Back to top
                 </a>
             </div>
         </div>
-    </footer>    
+    </footer>
+    
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menuItems = document.getElementById('mobile-menu-items');
+            menuItems.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('#mobile-menu-items a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('mobile-menu-items').classList.add('hidden');
+            });
+        });
+        
+        // Smooth scrolling for all anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
